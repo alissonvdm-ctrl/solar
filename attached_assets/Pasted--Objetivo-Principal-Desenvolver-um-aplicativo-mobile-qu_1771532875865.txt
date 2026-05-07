@@ -1,0 +1,66 @@
+## Objetivo Principal
+
+Desenvolver um aplicativo mobile que integre a API Solar do Google para auxiliar no dimensionamento e posicionamento de placas solares em telhados, com visualização 3D interativa, cálculos dinâmicos de geração de energia e geração de relatórios para orçamentação.
+
+## Requisitos Funcionais
+
+### Mapeamento e Georreferenciamento
+- Integrar Google Maps para seleção da localização
+- Permitir demarcação manual da área da edificação no mapa
+- Posicionar automaticamente as coordenadas geográficas baseado na localização do usuário
+- Exibir rosa dos ventos com indicação do norte
+
+### Simulação 3D
+- Gerar modelo 3D automático da edificação após demarcação da área
+- Posicionar placas solares dinamicamente no telhado 3D
+- Permitir manipulação interativa: arrastar placas, adicionar novas placas, remover placas
+- Atualizar simulação em tempo real conforme alterações
+
+### Formulário de Entrada (Superior da Interface)
+- Campo para informar inclinação do telhado (em graus)
+- Campo para informar valor de energia desejado para abater (em kWh)
+- Botão para processar e executar posicionamento automático das placas
+
+### Cálculos e Processamento
+- Utilizar API Solar do Google para obter dados de radiação solar, sombreamento e potencial de geração
+- Considerar a inclinação do telhado informada pelo usuário nos cálculos
+- Usar georreferenciamento para calcular especificidades solares do local
+- Calcular quantidade de energia gerada dinamicamente baseado na quantidade e posicionamento das placas
+- Atualizar tabela de energia gerada em tempo real conforme o usuário modifica o posicionamento das placas
+
+### Relatório e Exportação
+- Gerar relatório consolidado com dados da simulação (localização, quantidade de placas, energia gerada, inclinação, etc.)
+- Exportar relatório em PDF pronto para uso em orçamentação
+- Implementar funcionalidade de download do PDF
+
+### Persistência de Dados
+- Permitir salvar simulações com identificação única
+- Possibilitar recuperação de simulações anteriores para edição
+
+## Especificações Técnicas
+
+- **Idioma**: Português Brasileiro (pt-BR)
+- **Plataforma**: Mobile (considerar compatibilidade iOS e Android)
+- **APIs Obrigatórias**: Google Maps, Google Solar API
+- **Visualização 3D**: Implementar com biblioteca apropriada para renderização 3D em mobile (ex: Three.js, Babylon.js, ou equivalente nativa)
+- **Interatividade**: Suportar gesto de toque para manipulação de placas (drag, pinch-zoom, rotação)
+
+## Fluxo de Uso Esperado
+
+1. Usuário abre o app e localiza-se no mapa (georreferenciamento automático)
+2. Usuário demarca a área da edificação no mapa
+3. Sistema gera modelo 3D da edificação automaticamente
+4. Usuário preenche inclinação do telhado e valor de energia desejado
+5. Usuário clica em processar
+6. Sistema posiciona placas automaticamente baseado nos parâmetros e dados solares
+7. Usuário pode ajustar manualmente o posicionamento das placas
+8. Tabela de energia gerada atualiza em tempo real
+9. Usuário gera relatório e faz download do PDF
+10. Usuário pode salvar a simulação para consulta futura
+
+## Considerações de Design
+
+- Interface clara e intuitiva, otimizada para mobile
+- Rosa dos ventos sempre visível para referência de orientação
+- Feedback visual em tempo real para mudanças de posicionamento
+- Relatório PDF deve ser profissional e pronto para apresentação a clientes
